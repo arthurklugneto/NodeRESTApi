@@ -6,7 +6,11 @@ require('./config/global-paths');
 
 // Set config and logger variables
 global.config = require('./config');
+if( process.argv.contains("debug") ) global.config.debug = true;
 global.logger = require('./config/debug');
+
+// Splash    
+global.logger.api("Node.JS RESTfull API");
 
 // Create an Express App
 const express = require('express');
@@ -35,11 +39,11 @@ app.use(validationManager.provideDefaultValidator());
 app.use('/', routes);
 
 // Setup debug mode
-if( process.argv.contains("debug") ) global.config.debug = true;
+if( global.config.debug ){
+    mongoose.set('debug', true);
+} 
 
 app.listen(global.config.server.PORT, function () {
-    
-    global.logger.api("Node.JS RESTfull API");
     
     if( global.config.debug ){
         global.logger.info("app root path: " + global.APP_ROOT_PATH);
@@ -47,6 +51,6 @@ app.listen(global.config.server.PORT, function () {
         global.logger.info("mongo db path: " + config.db.MONGO_CONNECT_URL);
     } 
 
-    global.logger.api('API is running on port ' + global.config.server.PORT);
+    global.logger.api('API ['+global.config.version+'] is running on port ' + global.config.server.PORT);
 
 });

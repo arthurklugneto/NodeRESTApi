@@ -12,4 +12,5 @@ Array.prototype.contains = function(elem)
     server: require('./server'),
     jwtOptions: require('./jwt-options'),
     debug : false,
+    version : "0.0.1a"
 };
