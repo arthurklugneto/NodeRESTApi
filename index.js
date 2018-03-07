@@ -40,8 +40,11 @@ if( process.argv.contains("debug") ) global.config.debug = true;
 app.listen(global.config.server.PORT, function () {
     
     global.logger.api("Node.JS RESTfull API");
+    
     if( global.config.debug ){
-        global.logger.info("Debug Mode : Activated");
+        global.logger.info("app root path: " + global.APP_ROOT_PATH);
+        global.logger.info("router path: " + APP_ROUTE_PATH);
+        global.logger.info("mongo db path: " + config.db.MONGO_CONNECT_URL);
     } 
 
     global.logger.api('API is running on port ' + global.config.server.PORT);

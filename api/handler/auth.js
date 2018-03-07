@@ -1,6 +1,3 @@
-/**
- * Created by crosp on 5/9/17.
- */
 const RevokedToken = require(APP_MODEL_PATH + 'auth/revoked-token').RevokedTokenModel;
 const NotFoundError = require(APP_ERROR_PATH + 'invalid-payload');
 const BaseAutoBindedClass = require(APP_BASE_PACKAGE_PATH + 'base-autobind');

@@ -1,6 +1,3 @@
-/**
- * Created by crosp on 5/9/17.
- */
 const UserModel = require(APP_MODEL_PATH + 'user').UserModel;
 const AlreadyExistsError = require(APP_ERROR_PATH + 'already-exists');
 const ValidationError = require(APP_ERROR_PATH + 'validation');

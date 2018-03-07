@@ -1,6 +1,3 @@
-/**
- * Created by crosp on 5/9/17.
- */
 const BaseController = require(APP_CONTROLLER_PATH + 'base');
 const PostHandler = require(APP_HANDLER_PATH + 'post');
 class PostController extends BaseController {

@@ -1,6 +1,3 @@
-/**
- * Created by crosp on 5/12/17.
- */
 const passport = require('passport-strategy')
     , jwt = require('jsonwebtoken');
 

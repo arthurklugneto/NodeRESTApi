@@ -1,6 +1,3 @@
-/**
- * Created by crosp on 5/8/17.
- */
 let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 

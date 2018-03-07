@@ -1,9 +1,3 @@
-/**
- * Created by crosp on 5/13/17.
- */
-/**
- * Created by crosp on 5/9/17.
- */
 const BlogPostModel = require(APP_MODEL_PATH + 'post').BlogPostModel;
 const ValidationError = require(APP_ERROR_PATH + 'validation');
 const NotFoundError = require(APP_ERROR_PATH + 'not-found');

@@ -1,7 +1,3 @@
-/**
- * Created by crosp on 5/12/17.
- */
-
 const BaseAuthStrategy = require(APP_AUTH_STRATEGY + 'base-auth');
 const InvalidPayloadError = require(APP_ERROR_PATH + 'invalid-payload');
 const UnauthorizedError = require(APP_ERROR_PATH + 'unauthorized');
