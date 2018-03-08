@@ -15,6 +15,7 @@ global.logger.api("Node.JS RESTfull API");
 // Create an Express App
 const express = require('express');
 const app = express();
+const morgan = require('morgan');
 
 // Include dependencies
 const bodyParser = require('body-parser');
@@ -36,11 +37,16 @@ app.use(authManager.providePassport().initialize());
 app.use(validationManager.provideDefaultValidator());
 
 // Setup routes
+if( global.config.debug ){
+    app.use(morgan('[ http ] :method :url :status :res[content-length] - :response-time ms'));
+    global.logger.info("Morgan HTTP Logger set to debug mode.");
+}
 app.use('/', routes);
 
 // Setup debug mode
 if( global.config.debug ){
     mongoose.set('debug', true);
+    global.logger.info("Mongoose set to debug mode.")
 } 
 
 app.listen(global.config.server.PORT, function () {

@@ -7,7 +7,7 @@ Array.prototype.contains = function(elem)
     return false;
 }
  
- module.exports = {
+module.exports = {
     db: require('./db'),
     server: require('./server'),
     jwtOptions: require('./jwt-options'),
