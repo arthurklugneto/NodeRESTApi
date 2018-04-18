@@ -38,7 +38,7 @@ app.use(validationManager.provideDefaultValidator());
 
 // Setup routes
 if( global.config.debug ){
-    app.use(morgan('[ http ] :method :url :status :res[content-length] - :response-time ms'));
+    app.use(morgan(new Date().toISOString() + ' [ http ] :method :url :status :res[content-length] - :response-time ms'));
     global.logger.info("Morgan HTTP Logger set to debug mode.");
 }
 app.use('/', routes);

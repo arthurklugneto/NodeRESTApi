@@ -16,8 +16,8 @@ class HomeController extends BaseController{
     }
 
     createAdmin(req,res){
-        let responseManager = this._responseManager;
 
+        let responseManager = this._responseManager;
         let user = {
             "firstName" : "Administrator",
             "lastName" : "Administrator",

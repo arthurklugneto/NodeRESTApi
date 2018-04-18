@@ -4,13 +4,13 @@ module.exports = {
         console.log(new Date().toISOString() + ' [ api  ] \x1b[0m'+message);
     },
     info(message){
-        console.log(new Date().toISOString() + '\x1b[32m[ info ] \x1b[0m'+message);
+        console.log(new Date().toISOString() + '\x1b[32m [ info ] \x1b[0m'+message);
     },
     warn(message){
-        console.log(new Date().toISOString() + '\x1b[33m[ warn ] \x1b[0m'+message);
+        console.log(new Date().toISOString() + '\x1b[33m [ warn ] \x1b[0m'+message);
     },
     err(message){
-        console.log(new Date().toISOString() + '\x1b[31m[ err  ] \x1b[0m'+message);
+        console.log(new Date().toISOString() + '\x1b[31m [ err  ] \x1b[0m'+message);
     },
 
 };
