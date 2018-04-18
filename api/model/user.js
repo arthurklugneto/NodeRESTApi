@@ -8,6 +8,7 @@ let UserSchema = new Schema({
         type: String,
         required: true
     },
+    userRole: {type: Number, default :0},
     isActive: {type: Boolean, default: true},
     dateCreated: {type: Date, default: Date.now},
     email: String,

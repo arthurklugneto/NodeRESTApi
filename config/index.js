@@ -12,5 +12,6 @@ module.exports = {
     server: require('./server'),
     jwtOptions: require('./jwt-options'),
     debug : false,
-    version : "0.0.1a"
+    logEnabled : true,
+    app : require('./app')
 };

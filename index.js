@@ -10,7 +10,7 @@ if( process.argv.contains("debug") ) global.config.debug = true;
 global.logger = require('./config/debug');
 
 // Splash    
-global.logger.api("Node.JS RESTfull API");
+global.logger.api(global.config.app.name);
 
 // Create an Express App
 const express = require('express');
@@ -54,9 +54,9 @@ app.listen(global.config.server.PORT, function () {
     if( global.config.debug ){
         global.logger.info("app root path: " + global.APP_ROOT_PATH);
         global.logger.info("router path: " + APP_ROUTE_PATH);
-        global.logger.info("mongo db path: " + config.db.MONGO_CONNECT_URL);
+        global.logger.info("mongo db path: " + config.db.MONGO_CONNECT_URL);        
     } 
 
-    global.logger.api('API ['+global.config.version+'] is running on port ' + global.config.server.PORT);
+    global.logger.api('API ['+global.config.app.version+'] is running on port ' + global.config.server.PORT);
 
 });

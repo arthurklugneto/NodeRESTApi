@@ -96,7 +96,8 @@ class UserHandler {
                     firstName: validator.trim(data.firstName),
                     lastName: validator.trim(data.lastName),
                     email: validator.trim(data.email),
-                    password: validator.trim(data.password)
+                    password: validator.trim(data.password),
+                    userRole : data.userRole
                 });
             })
             .then((user) => {
@@ -121,6 +122,17 @@ class UserHandler {
                 callback.onError(error);
             });
     }
+
+    removeUserAdmin(req,callback){
+        return new Promise(function (resolve, reject) {
+            UserModel.remove({email: "admin@admin.com"}, function (err, docs) {
+                resolve(docs);
+            }).then((removed)=>{
+                callback.onSuccess(removed);
+            });
+        });
+    }
+
 }
 
 module.exports = UserHandler;

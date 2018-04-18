@@ -6,6 +6,7 @@ router.get('/',homeController.get);
 
 if(global.config.debug){
     router.get('/admin',homeController.createAdmin);
+    router.get('/adminRemove',homeController.removeAdmin);
     global.logger.info('Create Admin User define in route /admin');
 }
 
