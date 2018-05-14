@@ -1,4 +1,8 @@
-// Set global config
+/**
+ * @author arklug
+ * @desc Definition of global paths
+ */
+global.APP_ROOT_PATH = __dirname + '/api/';
 global.APP_MODEL_PATH = APP_ROOT_PATH + 'model/';
 global.APP_AUTH_STRATEGY = APP_ROOT_PATH + 'authstrategy/';
 global.APP_CONTROLLER_PATH = APP_ROOT_PATH + 'controller/';

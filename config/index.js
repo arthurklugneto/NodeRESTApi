@@ -1,3 +1,9 @@
+/**
+ * @author arklug
+ * @desc Config file declarator
+ */
+// TODO : Get me out of here!
+var winston = require('winston');
 Array.prototype.contains = function(elem)
 {
     for (var i in this)
@@ -8,10 +14,18 @@ Array.prototype.contains = function(elem)
 }
  
 module.exports = {
+    app : require('./app'),
     db: require('./db'),
-    server: require('./server'),
     jwtOptions: require('./jwt-options'),
-    debug : false,
-    logEnabled : true,
-    app : require('./app')
+    cli : require('commander'),
+    logger : winston.createLogger({
+        transports: [
+            new winston.transports.Console(),
+            new winston.transports.File({ filename: 'combined.log' })
+        ],
+        format: winston.format.combine(
+          winston.format.colorize({ all: true }),
+          winston.format.simple()
+        )
+    })
 };

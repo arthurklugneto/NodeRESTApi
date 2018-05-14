@@ -1,21 +1,26 @@
-// Root path
-global.APP_ROOT_PATH = __dirname + '/api/';
+'use strict';
 
-// Set other app paths
-require('./config/global-paths');
-
-// Set config and logger variables
-global.config = require('./config');
-if( process.argv.contains("debug") ) global.config.debug = true;
-global.logger = require('./config/debug');
-
-// Splash    
-global.logger.api(global.config.app.name);
-
-// Create an Express App
+/**
+ * @author arklug
+ * @desc Main Server Application
+ */
 const express = require('express');
 const app = express();
-const morgan = require('morgan');
+
+// Read global application paths
+require('./config/global-paths');
+// Set application parameters from /config
+global.application = require('./config');
+
+// CLI Options
+global.application.cli
+    .version(global.application.app.name + " v." + global.application.app.version)
+    .option('--debug')
+    .parse(process.argv);
+
+application.logger.log('info','Starting application ['+application.app.name + " "+ application.app.version +']...');
+
+/*
 
 // Include dependencies
 const bodyParser = require('body-parser');
@@ -60,3 +65,5 @@ app.listen(global.config.server.PORT, function () {
     global.logger.api('API ['+global.config.app.version+'] is running on port ' + global.config.server.PORT);
 
 });
+
+*/
